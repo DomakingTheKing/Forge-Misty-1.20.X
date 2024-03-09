@@ -1,6 +1,9 @@
 package net.domakingo.misty;
 
 import com.mojang.logging.LogUtils;
+import net.domakingo.misty.item.ModCreativeModTabs;
+import net.domakingo.misty.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -23,6 +26,9 @@ public class Misty {
     public Misty() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -35,7 +41,11 @@ public class Misty {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        /*
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.MIST_ORB);
+        }
+        */
     }
 
     @SubscribeEvent
