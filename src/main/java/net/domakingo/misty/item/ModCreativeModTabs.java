@@ -1,6 +1,7 @@
 package net.domakingo.misty.item;
 
 import net.domakingo.misty.Misty;
+import net.domakingo.misty.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,6 +19,7 @@ public class ModCreativeModTabs {
                     .title(Component.translatable("creativetab.misty_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.MIST_ORB.get());
+                        pOutput.accept(ModBlocks.MIST.get());
                     })
                     .build());
 

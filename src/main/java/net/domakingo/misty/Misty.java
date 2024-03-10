@@ -1,6 +1,7 @@
 package net.domakingo.misty;
 
 import com.mojang.logging.LogUtils;
+import net.domakingo.misty.block.ModBlocks;
 import net.domakingo.misty.item.ModCreativeModTabs;
 import net.domakingo.misty.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -28,6 +29,7 @@ public class Misty {
 
         ModCreativeModTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
